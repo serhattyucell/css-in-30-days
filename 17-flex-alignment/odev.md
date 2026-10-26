@@ -9,6 +9,26 @@ Stil, belgenin başındaki `<style>` içinde dursun.
 
 **Bahçe Kitap** — Serhat’ın bağımsız kitapçısı. Vitrinde dört kitap durur; her kitap bir kente bağlıdır (İstanbul, İzmir, Trabzon, Van). Sayfa gerçek bir kitapçı ana sayfası gibi okunsun.
 
+## Renk paleti
+
+Kafe/pansiyon yeşilini (`#0e4d5c`) kullanma. Bu ödevin paleti:
+
+| Rol | Renk | Hex |
+| --- | --- | --- |
+| Sayfa zemini | Açık gri-mavi | `#eef2f6` |
+| Kart / üst satır zemini | Beyaz | `#ffffff` |
+| Ana renk (logo, menü, link) | Lacivert | `#1b4f72` |
+| Kapak / footer / tablo başlığı | Koyu lacivert | `#243447` / `#15202b` |
+| Vurgu (CTA kutusu, hover) | Sarı | `#f0c14b` |
+| Metin | Koyu | `#15202b` |
+| İkincil metin | Gri | `#5c6b7a` |
+| Kenarlık | Açık gri | `#c5d0dc` |
+| Tablo çift satır | Açık mavi-gri | `#e4ebf2` |
+| Kapak şerit — İstanbul | Lacivert | `#1b4f72` |
+| Kapak şerit — İzmir | Amber | `#c47b00` |
+| Kapak şerit — Trabzon | Yeşil | `#1e6b4f` |
+| Kapak şerit — Van | Mor | `#6b3d6e` |
+
 ## Sayfada ne olacak
 
 1. **Üst (iki katman)**  
@@ -41,7 +61,7 @@ Stil, belgenin başındaki `<style>` içinde dursun.
 | Gün | Ne kullanılsın |
 | --- | --- |
 | 02–04 | seçici, sınıf, `#logo` |
-| 05 | renk, arka plan (kafe/pansiyon paletini kopyalama) |
+| 05 | renk, arka plan (yukarıdaki palet) |
 | 06–07 | yazı tipi, metin |
 | 08 | `rem` / `em` |
 | 09–11 | padding, margin, border |
