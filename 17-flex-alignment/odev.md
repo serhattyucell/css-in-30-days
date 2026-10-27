@@ -1,85 +1,107 @@
-# Ödev — 17. güne kadar (3)
+# Ödev — 17. güne kadar (4) · zor + eğlenceli
 
-Bu ödev, 1–17. günleri tek sayfada bir araya getirir. Kafe ve pansiyon ödevlerinden farklıdır. Grid, medya sorgusu, form ve konum yoktur. Çözüm dersin içinde yoktur.
+Bu ödev, 1–17. günleri zorlar. Önceki kafe / pansiyon / kitapçı ödevlerinden farklıdır. Grid, medya sorgusu, form ve konum **yasak**. Çözüm dersin içinde yoktur.
 
-Dosya adı: `bahce-kitap.html`  
-Stil, belgenin başındaki `<style>` içinde dursun.
+Dosya adı: `corap-muzesi.html`  
+Stil `<style>` içinde dursun.
 
 ## Konu
 
-**Bahçe Kitap** — Serhat’ın bağımsız kitapçısı. Vitrinde dört kitap durur; her kitap bir kente bağlıdır (İstanbul, İzmir, Trabzon, Van). Sayfa gerçek bir kitapçı ana sayfası gibi okunsun.
+**Ulusal Çorap Müzesi** — Serhat’ın uydurma ama ciddiye alınan müzesi. Sergiler dört kentten “efsane çorap” gösterir. Sayfa gerçek bir müze sitesi gibi dursun; şaka metin, ciddi CSS.
 
 ## Renk paleti
 
-Kafe/pansiyon yeşilini (`#0e4d5c`) kullanma. Bu ödevin paleti:
-
-| Rol | Renk | Hex |
-| --- | --- | --- |
-| Sayfa zemini | Açık gri-mavi | `#eef2f6` |
-| Kart / üst satır zemini | Beyaz | `#ffffff` |
-| Ana renk (logo, menü, link) | Lacivert | `#1b4f72` |
-| Kapak / footer / tablo başlığı | Koyu lacivert | `#243447` / `#15202b` |
-| Vurgu (CTA kutusu, hover) | Sarı | `#f0c14b` |
-| Metin | Koyu | `#15202b` |
-| İkincil metin | Gri | `#5c6b7a` |
-| Kenarlık | Açık gri | `#c5d0dc` |
-| Tablo çift satır | Açık mavi-gri | `#e4ebf2` |
-| Kapak şerit — İstanbul | Lacivert | `#1b4f72` |
-| Kapak şerit — İzmir | Amber | `#c47b00` |
-| Kapak şerit — Trabzon | Yeşil | `#1e6b4f` |
-| Kapak şerit — Van | Mor | `#6b3d6e` |
-
-## Sayfada ne olacak
-
-1. **Üst (iki katman)**  
-   Üst satır: solda `#logo`, sağda kısa bir etiket (ör. “Bağımsız kitapçı”).  
-   Alt satır: koyu zeminli menü — Vitrin, Kategoriler, Saatler, İletişim. Flex + `gap`.
-
-2. **Kapak (yan yana)**  
-   Sol: büyük başlık + cümle. Sağ: sarı/vurgu kutusu içinde “Vitrine bak” linki.  
-   `justify-content: space-between`, `align-items: center`, `flex-wrap`. Ortaya yığma.
-
-3. **Vitrin kartları (yatay kart)**  
-   Dört kitap. Her kartın içinde sol şerit (kapak rengi) + sağda metin.  
-   Dışarıda flex + `gap` + `flex-wrap`. İçeride de flex.  
-   Kartta: kent etiketi, kitap adı (sınıf), cümle, fiyat, “Sepete bak” (`:hover`).
-
-4. **Dükkân hakkında**  
-   Sol görsel, sağ metin. Solunda kalın renkli kenarlık olabilir. Flex + `gap` + `align-items`.
-
-5. **Kategoriler**  
-   İşaretsiz flex liste; maddeler dolu zeminli etiket gibi dursun.
-
-6. **Saatler tablosu**  
-   Tam genişlik. `border-collapse`. Başlık satırı koyu. Çift satırlar farklı zemin. İnce alt çizgi yeter; çift çerçeve olmasın.
-
-7. **Footer**  
-   Solda marka, sağda kısa not — `space-between` ile. Flex + `align-items: center`.
-
-## Kullanılması gerekenler
-
-| Gün | Ne kullanılsın |
+| Rol | Hex |
 | --- | --- |
-| 02–04 | seçici, sınıf, `#logo` |
-| 05 | renk, arka plan (yukarıdaki palet) |
+| Sayfa zemini | `#f6f0e8` |
+| Kart zemini | `#ffffff` |
+| Ana renk | `#6b2d5c` |
+| Koyu şerit / footer | `#2d1b28` |
+| Vurgu | `#e8a838` |
+| Metin | `#1f1520` |
+| İkincil | `#6e5c66` |
+| Kenarlık | `#d9cfc4` |
+| Tablo çift satır | `#efe6db` |
+| Sergi — İstanbul | `#6b2d5c` |
+| Sergi — İzmir | `#c45c26` |
+| Sergi — Trabzon | `#2f6b4f` |
+| Sergi — Van | `#3d5a80` |
+
+## Zorunlu bölümler
+
+### 1. Üst bar (iki iş birden)
+- Solda müze adı (istersen `#logo`).
+- Ortada veya sağda 4 menü maddesi (flex + `gap`).
+- Sağda sarı “Açık” rozeti.
+- Tüm satır: `justify-content: space-between`, `align-items: center`.
+- Rozet biraz yukarı/aşağı kaymasın; dikey ortalı olsun.
+
+### 2. Bilet şeridi (hero, ters düzen)
+- **Sol:** sarı kutu — “Bilet al” linki + kısa fiyat notu.
+- **Sağ:** büyük başlık + bir cümle.
+- Yani vurgu kutusu solda; metin sağda. (`space-between`, `flex-wrap`, `align-items: center`)
+- Önceki ödevlerin kapak düzenini aynen kopyalama.
+
+### 3. Sergi kartları (iç içe flex — asıl zorluk)
+Dört kart: İstanbul, İzmir, Trabzon, Van. Dışarıda flex + `gap` + `flex-wrap`.
+
+Her kartın **içinde** de flex olsun, `flex-direction: column`:
+1. Üstte renkli şerit (kent rengi)
+2. Çorap adı (sınıf ile)
+3. 1 komik cümle
+4. Alt satır: solda yıl / sağda “İncele” — bu satır ayrı bir flex (`space-between`)
+
+**Ek kural:** Van kartında `align-self: flex-end` kullan (kardeşlerinden farklı hizalansın). Dış kabın `align-items: stretch` veya `flex-start` olduğunu göster.
+
+### 4. Ziyaret planı (yan yana, oran farklı)
+- Sol kutu `flex: 2` — müze görseli + kısa metin.
+- Sağ kutu `flex: 1` — “Bugün” listesi (işaretsiz, dikey flex): 3 madde (ör. tur saati, sesli rehber, kafe).
+- `gap`, `align-items: stretch`.
+
+### 5. Koleksiyon etiketleri
+Yatay flex, `flex-wrap`, işaretsiz liste. En az 5 etiket (Yün, Çizgili, Tek, Kayıp çift, Kışlık…). Dolu zeminli olsun.
+
+### 6. Bilet fiyatları tablosu
+Üç sütun: bilet türü, fiyat, not.  
+`border-collapse`, koyu başlık, çift satır farklı zemin. En az 4 satır (Öğrenci, Yetişkin, Aile, Serhat dostu…).
+
+### 7. Footer (üç parça)
+Flex + `space-between` + `align-items: center`:
+- sol: müze adı  
+- orta: kısa adres uydurması  
+- sağ: “© Serhat”  
+Daralınca `flex-wrap` ile alta insinler.
+
+## Kullanılması gerekenler (hepsi)
+
+| Gün | Zorunlu |
+| --- | --- |
+| 02–04 | sınıf + en az bir kimlik |
+| 05 | palet |
 | 06–07 | yazı tipi, metin |
-| 08 | `rem` / `em` |
+| 08 | `rem` / `em` ağırlıklı |
 | 09–11 | padding, margin, border |
 | 12 | `display` |
-| 13 | `:hover` |
-| 14 | liste + tablo |
-| 15 | görsel sığdırma |
-| 16–17 | `flex`, `gap`, `flex-wrap`, `justify-content`, `align-items` |
+| 13 | `:hover` (en az menü veya “İncele”) |
+| 14 | liste + tablo (3 sütun) |
+| 15 | görsel sığdırma veya renkli kutu |
+| 16–17 | `flex`, `gap`, `flex-wrap`, `justify-content`, `align-items`, **`flex-direction: column`**, **`align-self`**, **`flex: 1` / `flex: 2`** |
+
+## Eğlence kuralı
+
+Metinler komik olabilir; CSS ciddidir. “asdf” ve lorem yok. Kentler ve Serhat kalsın.
 
 ## Önizleme
 
-[onizleme.html](onizleme.html) — yalnızca hedef. Asıl iş kendi yazmak.
+[onizleme.html](onizleme.html)
 
 ## Bitince kontrol
 
-- Kitap kartları vitrin gibi mi?
-- Dar ekranda alta iniyorlar mı?
-- Renkler önceki ödevlerden farklı mı?
-- Hover ve tablo şeritleri var mı?
+- Bilet şeridinde sarı kutu **solda** mı?
+- Kartların içinde column flex var mı?
+- Van kartı `align-self` ile ayrışıyor mu?
+- Ziyaret planında `flex: 2` / `flex: 1` belli mi?
+- Tabloda 3 sütun ve şeritli satırlar var mı?
+- Footer üç parçalı mı?
 
 [← 17. gün](ders.md) · [İçindekiler](../README.md)
