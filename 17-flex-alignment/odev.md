@@ -1,95 +1,88 @@
-# Ödev — 17. güne kadar (4) · zor + eğlenceli
+# Ödev — 17. güne kadar (4) · zor + şık
 
-Bu ödev, 1–17. günleri zorlar. Önceki kafe / pansiyon / kitapçı ödevlerinden farklıdır. Grid, medya sorgusu, form ve konum **yasak**. Çözüm dersin içinde yoktur.
+Bu ödev, 1–17. günleri zorlar. Grid, medya sorgusu, form ve konum **yasak**. Çözüm dersin içinde yoktur.
 
-Dosya adı: `corap-muzesi.html`  
+Dosya adı: `rota-bilet.html`  
 Stil `<style>` içinde dursun.
 
 ## Konu
 
-**Ulusal Çorap Müzesi** — Serhat’ın uydurma ama ciddiye alınan müzesi. Sergiler dört kentten “efsane çorap” gösterir. Sayfa gerçek bir müze sitesi gibi dursun; şaka metin, ciddi CSS.
+**Rota Bilet** — Serhat’ın dört kent arası bilet ofisi. İstanbul, İzmir, Trabzon ve Van seferleri tek sayfada satılır gibi dursun. Şaka yok; düzenli, gerçek bir bilet sitesi gibi okunsun.
 
 ## Renk paleti
 
 | Rol | Hex |
 | --- | --- |
-| Sayfa zemini | `#f6f0e8` |
-| Kart zemini | `#ffffff` |
-| Ana renk | `#6b2d5c` |
-| Koyu şerit / footer | `#2d1b28` |
-| Vurgu | `#e8a838` |
-| Metin | `#1f1520` |
-| İkincil | `#6e5c66` |
-| Kenarlık | `#d9cfc4` |
-| Tablo çift satır | `#efe6db` |
-| Sergi — İstanbul | `#6b2d5c` |
-| Sergi — İzmir | `#c45c26` |
-| Sergi — Trabzon | `#2f6b4f` |
-| Sergi — Van | `#3d5a80` |
+| Sayfa zemini | `#f2f5f8` |
+| Kart / üst zemini | `#ffffff` |
+| Ana renk | `#0f3d5c` |
+| Koyu şerit / footer | `#0a2436` |
+| Vurgu | `#d4a017` |
+| Metin | `#142029` |
+| İkincil | `#5a6b78` |
+| Kenarlık | `#c8d2db` |
+| Tablo çift satır | `#e6edf3` |
+| Sefer — İstanbul | `#0f3d5c` |
+| Sefer — İzmir | `#b86e18` |
+| Sefer — Trabzon | `#1f6b4f` |
+| Sefer — Van | `#4a5d8a` |
 
 ## Zorunlu bölümler
 
-### 1. Üst bar (iki iş birden)
-- Solda müze adı (istersen `#logo`).
-- Ortada veya sağda 4 menü maddesi (flex + `gap`).
-- Sağda sarı “Açık” rozeti.
-- Tüm satır: `justify-content: space-between`, `align-items: center`.
-- Rozet biraz yukarı/aşağı kaymasın; dikey ortalı olsun.
+### 1. Üst bar
+- Solda ofis adı (istersen `#logo`).
+- Ortada/sağda menü: Seferler, Saatler, Tarifeler, İletişim (`flex` + `gap`).
+- Sağda altın “Online” rozeti.
+- Satır: `justify-content: space-between`, `align-items: center`.
 
-### 2. Bilet şeridi (hero, ters düzen)
-- **Sol:** sarı kutu — “Bilet al” linki + kısa fiyat notu.
+### 2. Kapak şeridi (ters düzen)
+- **Sol:** altın kutu — “Bilet al” + kısa not (ör. “Tek yön · 450 TL’den”).
 - **Sağ:** büyük başlık + bir cümle.
-- Yani vurgu kutusu solda; metin sağda. (`space-between`, `flex-wrap`, `align-items: center`)
-- Önceki ödevlerin kapak düzenini aynen kopyalama.
+- `space-between`, `flex-wrap`, `align-items: center`. Önceki ödev kapaklarını kopyalama.
 
-### 3. Sergi kartları (iç içe flex — asıl zorluk)
+### 3. Sefer kartları (iç içe flex)
 Dört kart: İstanbul, İzmir, Trabzon, Van. Dışarıda flex + `gap` + `flex-wrap`.
 
-Her kartın **içinde** de flex olsun, `flex-direction: column`:
-1. Üstte renkli şerit (kent rengi)
-2. Çorap adı (sınıf ile)
-3. 1 komik cümle
-4. Alt satır: solda yıl / sağda “İncele” — bu satır ayrı bir flex (`space-between`)
+Her kartın içinde `flex-direction: column`:
+1. Üstte kent rengi şerit
+2. Güzergâh adı (sınıf ile)
+3. Kısa açıklama (kalkış / varış hissi)
+4. Alt satır flex: solda süre veya fiyat, sağda “Seç” (`space-between`)
 
-**Ek kural:** Van kartında `align-self: flex-end` kullan (kardeşlerinden farklı hizalansın). Dış kabın `align-items: stretch` veya `flex-start` olduğunu göster.
+**Ek:** Van kartında `align-self: flex-end`.
 
-### 4. Ziyaret planı (yan yana, oran farklı)
-- Sol kutu `flex: 2` — müze görseli + kısa metin.
-- Sağ kutu `flex: 1` — “Bugün” listesi (işaretsiz, dikey flex): 3 madde (ör. tur saati, sesli rehber, kafe).
+### 4. Bugünün planı (oranlı yan yana)
+- Sol `flex: 2` — görsel/kutu + kısa ofis metni.
+- Sağ `flex: 1` — “Bugün” listesi (işaretsiz, column flex): 3 kalkış saati.
 - `gap`, `align-items: stretch`.
 
-### 5. Koleksiyon etiketleri
-Yatay flex, `flex-wrap`, işaretsiz liste. En az 5 etiket (Yün, Çizgili, Tek, Kayıp çift, Kışlık…). Dolu zeminli olsun.
+### 5. Hat etiketleri
+Yatay flex, `flex-wrap`, işaretsiz. En az 5 etiket (Tek yön, Gidiş-dönüş, Gece, Hızlı, Öğrenci…).
 
-### 6. Bilet fiyatları tablosu
+### 6. Tarife tablosu
 Üç sütun: bilet türü, fiyat, not.  
-`border-collapse`, koyu başlık, çift satır farklı zemin. En az 4 satır (Öğrenci, Yetişkin, Aile, Serhat dostu…).
+`border-collapse`, koyu başlık, çift satır farklı zemin. En az 4 satır.
 
 ### 7. Footer (üç parça)
-Flex + `space-between` + `align-items: center`:
-- sol: müze adı  
-- orta: kısa adres uydurması  
-- sağ: “© Serhat”  
-Daralınca `flex-wrap` ile alta insinler.
+`space-between` + `align-items: center` + `flex-wrap`:
+- sol: Rota Bilet  
+- orta: kısa adres  
+- sağ: © Serhat  
 
-## Kullanılması gerekenler (hepsi)
+## Kullanılması gerekenler
 
 | Gün | Zorunlu |
 | --- | --- |
 | 02–04 | sınıf + en az bir kimlik |
 | 05 | palet |
 | 06–07 | yazı tipi, metin |
-| 08 | `rem` / `em` ağırlıklı |
+| 08 | `rem` / `em` |
 | 09–11 | padding, margin, border |
 | 12 | `display` |
-| 13 | `:hover` (en az menü veya “İncele”) |
-| 14 | liste + tablo (3 sütun) |
+| 13 | `:hover` |
+| 14 | liste + 3 sütunlu tablo |
 | 15 | görsel sığdırma veya renkli kutu |
-| 16–17 | `flex`, `gap`, `flex-wrap`, `justify-content`, `align-items`, **`flex-direction: column`**, **`align-self`**, **`flex: 1` / `flex: 2`** |
-
-## Eğlence kuralı
-
-Metinler komik olabilir; CSS ciddidir. “asdf” ve lorem yok. Kentler ve Serhat kalsın.
+| 16–17 | `flex`, `gap`, `flex-wrap`, `justify-content`, `align-items`, `flex-direction: column`, `align-self`, `flex: 1` / `flex: 2` |
 
 ## Önizleme
 
@@ -97,11 +90,11 @@ Metinler komik olabilir; CSS ciddidir. “asdf” ve lorem yok. Kentler ve Serha
 
 ## Bitince kontrol
 
-- Bilet şeridinde sarı kutu **solda** mı?
-- Kartların içinde column flex var mı?
-- Van kartı `align-self` ile ayrışıyor mu?
-- Ziyaret planında `flex: 2` / `flex: 1` belli mi?
-- Tabloda 3 sütun ve şeritli satırlar var mı?
+- Altın kutu kapakta **solda** mı?
+- Kartlarda column flex + alt satır `space-between` var mı?
+- Van `align-self` ile ayrışıyor mu?
+- Planda `flex: 2` / `flex: 1` belli mi?
+- Tablo 3 sütun + şeritli mi?
 - Footer üç parçalı mı?
 
 [← 17. gün](ders.md) · [İçindekiler](../README.md)
