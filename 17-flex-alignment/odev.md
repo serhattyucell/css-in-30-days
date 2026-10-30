@@ -19,6 +19,32 @@ Alıştırma sayfasıdır; resmi Audi sitesi değildir. Grid, medya sorgusu, for
 | Kırmızı | `#c4001a` |
 | Tablo çift | `#1f1f1f` |
 
+## Kart görselleri (gradient)
+
+Her modelin üst kutusuna kendi sınıfını ver. Örnek CSS:
+
+```css
+.gorsel {
+  height: 6rem;
+}
+
+.a1 {
+  background: linear-gradient(145deg, #222, #555);
+}
+
+.a6 {
+  background: linear-gradient(145deg, #1a1a1a, #666);
+}
+
+.q7 {
+  background: linear-gradient(145deg, #181818, #5a2028);
+}
+
+.rs6 {
+  background: linear-gradient(145deg, #111, #c4001a 150%);
+}
+```
+
 ## Ne yapacaksın (4 parça)
 
 1. **Üst** — solda `#logo` (`AUDI`), sağda 3 link: Modeller, Fiyatlar, İletişim. Flex, `space-between`, `align-items: center`. `:hover`.
